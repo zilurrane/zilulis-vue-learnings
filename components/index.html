@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>
+        Components
+    </title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="v-comp-app">
+        <ol>
+            <list-item v-for="friend in friends" :value="friend.name" :key="friend.id">
+                {{ friend.name }}
+            </list-item>
+        </ol>
+    </div>
+    <script>
+        Vue.component('list-item', {
+            props: ['value'],
+            template: '<li>{{ value }}</li>'
+        })
+        var appComp = new Vue({
+            el: '#v-comp-app',
+            data: {
+                friends: [{
+                        id: 1,
+                        name: 'Abhay'
+                    },
+                    {
+                        id: 2,
+                        name: 'Nayan'
+                    },
+                    {
+                        id: 3,
+                        name: 'Shreyas'
+                    },
+                    {
+                        id: 4,
+                        name: 'Lalit'
+                    },
+                    {
+                        id: 5,
+                        name: 'Suprita'
+                    },
+                    {
+                        id: 6,
+                        name: 'Mahesh'
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
