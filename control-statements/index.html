@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        Hello World
+    </title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="v-if-app">
+        <h3>v-if</h3>
+        <div v-if="message.enable">
+            {{ message.text }}
+        </div>
+    </div>
+    <div id="v-for-app">
+        <h3>v-for</h3>
+        <ol>
+            <li v-for="friend in friends">
+                {{ friend.name }}
+            </li>
+        </ol>
+    </div>
+    <script>
+        var appIf = new Vue({
+            el: '#v-if-app',
+            data: {
+                message: {
+                    enable: true,
+                    text: 'Hello Vue World!'
+                }
+            }
+        })
+        var appFor = new Vue({
+            el: '#v-for-app',
+            data: {
+                friends: [{
+                        name: 'Abhay'
+                    },
+                    {
+                        name: 'Nayan'
+                    },
+                    {
+                        name: 'Shreyas'
+                    },
+                    {
+                        name: 'Lalit'
+                    },
+                    {
+                        name: 'Suprita'
+                    },
+                    {
+                        name: 'Mahesh'
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
