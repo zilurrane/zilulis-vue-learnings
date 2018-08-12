@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        Handling User Inputs
+    </title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="v-on-app">
+        <h3>v-on</h3>
+        <div v-if="message.enable">
+            {{ message.text }}
+        </div>
+        <button v-on:click="toggleMessage">{{message.enable?'Hide':'Show'}}</button>
+    </div>
+    <div id="v-model-app">
+        <h3>v-model</h3>
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+    <script>
+        var appOn = new Vue({
+            el: '#v-on-app',
+            data: {
+                message: {
+                    enable: true,
+                    text: 'Hello Vue World!'
+                }
+            },
+            methods: {
+                toggleMessage: function () {
+                    this.message.enable = !this.message.enable
+                }
+            }
+        })
+        var appModel = new Vue({
+            el: '#v-model-app',
+            data: {
+                message: 'Hello World!'
+            }
+        })
+    </script>
+</body>
+
+</html>
