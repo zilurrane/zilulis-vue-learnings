@@ -4,19 +4,22 @@
     <title>
         Hello World
     </title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
-        {{ message }}
+        <div v-bind:title="title">
+            {{ message }}
+        </div>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue World!'
+                message: 'Hello Vue World!',
+                title: 'This is tooltip'
             }
         })
     </script>
